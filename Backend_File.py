@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import QMessageBox
 class MAINCODEPMT(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowIcon(QIcon("Images/new.png"))
+        self.setWindowIcon(QIcon("new.png"))
         self.setWindowTitle("PMT CONTROL 1.0.5 ")
         self.setFixedSize(1234, 794)
         self.voltage = 0.0
@@ -23,7 +23,7 @@ class MAINCODEPMT(QWidget):
         self.is_running = False  # Tracks Start/Stop
         self.is_connected = False  # Tracks Connect/Disconnect
         self.device_connected = False
-        self.set_background("Images/GUI.png")
+        self.set_background("GUI.png")
         self.ser = self.connect_first_available_port()
         if self.ser and self.ser.is_open:
             pass
@@ -468,7 +468,7 @@ class MAINCODEPMT(QWidget):
 
         self.condis_icon_size = QSize(400, 360)
         self.start_btn1 = QPushButton(self)
-        self.start_btn1.setIcon(QIcon("Images/startb.png"))
+        self.start_btn1.setIcon(QIcon("startb.png"))
         self.start_btn1.setIconSize(self.condis_icon_size)
         self.start_btn1.setGeometry(300, 615, 220, 200)
         self.start_btn1.setStyleSheet("border: none;")
@@ -476,7 +476,7 @@ class MAINCODEPMT(QWidget):
 
         self.startstop_icon_size = QSize(420, 380)
         self.start_btn11 = QPushButton(self)
-        self.start_btn11.setIcon(QIcon("Images/Connectb.png"))
+        self.start_btn11.setIcon(QIcon("Connectb.png"))
         self.start_btn11.setIconSize(self.startstop_icon_size)
         self.start_btn11.setGeometry(50, 615, 220, 200)
         self.start_btn11.setStyleSheet("border: none;")
@@ -492,14 +492,14 @@ class MAINCODEPMT(QWidget):
             if not self.is_connected:
                 # Connect
                 self.is_connected = True
-                self.start_btn11.setIcon(QIcon("Images/DisconnectB.png"))
+                self.start_btn11.setIcon(QIcon("DisconnectB.png"))
                 self.startstop_icon_size = QSize(400, 360)
                 self.start_btn11.repaint()
                 self.send_cmd("CONNECT")
             else:
                 # Disconnect
                 self.is_connected = False
-                #self.start_btn11.setIcon(QIcon("Images/Connectb.png"))
+                #self.start_btn11.setIcon(QIcon("Connectb.png"))
                 #self.startstop_icon_size = QSize(400, 360)
                 #self.start_btn11.repaint()
                 self.send_cmd("DISCONNECT")
@@ -518,7 +518,7 @@ class MAINCODEPMT(QWidget):
             if not self.is_running:
                 # Start
                 self.is_running = True
-                self.start_btn1.setIcon(QIcon("Images/Stopb.png"))
+                self.start_btn1.setIcon(QIcon("Stopb.png"))
                 self.start_btn1.setIconSize(self.condis_icon_size)
                 self.start_btn1.repaint()
                 self.send_cmd("ON")
@@ -526,7 +526,7 @@ class MAINCODEPMT(QWidget):
             else:
                 # Stop
                 self.is_running = False
-                self.start_btn1.setIcon(QIcon("Images/startB.png"))
+                self.start_btn1.setIcon(QIcon("startB.png"))
                 self.start_btn1.setIconSize(self.condis_icon_size)
                 self.start_btn1.repaint()
                 self.send_cmd("OFF")
