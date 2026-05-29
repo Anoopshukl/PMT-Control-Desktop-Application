@@ -3,6 +3,8 @@
 ## Overview
 Python-based desktop application for controlling and monitoring Photomultiplier Tube (PMT) systems used in scientific instrumentation and photon detection applications.
 
+## Main GUI
+![Main GUI](images/main_gui.png)
 
 ## Features
 - PMT Control
@@ -26,3 +28,5 @@ Python-based desktop application for controlling and monitoring Photomultiplier 
 - Embedded Controller
 - USB Communication
 - High Voltage Control
+
+
